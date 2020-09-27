@@ -73,6 +73,7 @@ class Main{
             Pair top=ss.peek();
             if(top.state==1)
             {
+                top.state++;
                 idx++;
                 if(arr[idx]!=null)
                 {
@@ -85,10 +86,10 @@ class Main{
                 {
                     top.node.left=null;
                 }
-                top.state++;
             }
              else if(top.state==2)
             {
+                 top.state++;
                 idx++;
                 if(arr[idx]!=null)
                 {
@@ -101,7 +102,7 @@ class Main{
                 {
                     top.node.right=null;
                 }
-                top.state++;
+               
             }
             else
             {
