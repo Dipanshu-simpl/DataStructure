@@ -51,8 +51,56 @@ class Main{
         display(node.left);
         display(node.right);
     }
+
+     /* size of te tree*/
     
     
+    public static int size(Node node)
+    {
+        if(node==null)
+        {
+            return 0;
+        }
+        
+        int ls=size(node.left);
+        int rs=size(node.right);
+        int ts=ls+rs+1;
+        return ts;
+        
+    }
+    
+    /* Sum of nodes*/
+    
+    public static int sum(Node node)
+    {
+        if(node==null)
+        {
+            return 0;
+        }
+        
+        int lts=sum(node.left);
+        int rts=sum(node.right);
+        int tsm=lts+rts+node.data;
+        return tsm;
+    }
+    
+    
+    /* Max node of the tree*/
+    
+    public static int max(Node node)
+    {
+        if(node==null)
+        {
+            return Integer.MIN_VALUE;
+        }
+        int ltm=max(node.left);
+        int rtm=max(node.right);
+        
+        
+        int tm=Math.max(node.data,Math.max(ltm,rtm));
+        return tm;
+    }
+
     public static void main(String args[])
     {
         Integer arr[]={50,25,12,null,null,37,30,null,null,null,75,62,null,70,null,null,87,null,null};
